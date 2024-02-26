@@ -1,0 +1,87 @@
+html {margin:0;padding:0;border:0;}
+body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, dialog, figure, footer, header, hgroup, nav, section {margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline; font-family:"Courier New",Courier,monospace; font-size:1em; }
+article, aside, details, figcaption, figure, dialog, footer, header, hgroup, menu, nav, section {display:block;}
+body {
+    line-height:1.5;
+    background:white;
+}
+table {border-collapse:separate;border-spacing:0;}
+caption, th, td {text-align:left;font-weight:normal;float:none !important;}
+table, th, td {vertical-align:middle;}
+blockquote:before, blockquote:after, q:before, q:after {content:'';}
+blockquote, q {quotes:"" "";}
+
+a img {border:none;}
+a, a:visited, .linky { color:#FFF; cursor:pointer; font-weight:bold; text-decoration:none; }
+a#flag { color:#323031;}
+a:hover, span.linky:hover, td.linky:hover { background-color:#FFF; color:#000; }
+
+div#credit { bottom:0; color:#FFF; font-size:xx-small; opacity:.25; }
+div#credit:hover { opacity:.75; }
+div#credit a { font-size:xx-small; text-decoration:underline; }
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+.navbar li {
+    list-style: none;
+    display:inline;
+}
+.navbar {
+    margin-top: 0.3em;
+    margin-left: 4em;
+    overflow: hidden;
+}
+.navbar li a {
+    font-size: 1.2em;
+}
+
+.footer {
+    padding: 30em 0;    
+}
+
+#cli {
+    padding-top: 30px;
+    width: 50%;
+    height: 150%;
+    margin: 25px;
+}
+@media (max-width: 787px) {
+    #cli {
+        width: 100%;
+        height: 100%;
+    }
+}
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+    #cli {
+        width: 100%;
+    }
+}
+@media (max-width: 480px) {
+    .navbar li a {
+        font-size: 1em;
+    }
+    .navbar {
+        margin-left: 2em;
+    }
+}
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+

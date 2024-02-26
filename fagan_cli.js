@@ -841,14 +841,14 @@ Filesystem = {
     "welcome.txt": {
         type: "file",
         read: function(a) {
-            a.print($("<p>").html("<b>Welcome this page includes my portfolio. Please feel free to my resume by typing cd resume.</b>"))
+            a.print($("<p>").html("<b>Welcome to my portfolio website. Within this space, I aim to showcase my expertise and experience in securing digital environments.</b>"))
         }
     },
     "about.txt": {
         type: "file",
         read: function(a) {
             a.print();
-            $.each(["Hello, I am Fagan Afandiyev. I am a student at the University of South Florida. I am a freshman. I am interested in cybersecurity, mainly red-teaming, programming, and robotics. I have been learning cybersecurity and programming myself for the last 7-8 years. I have been competing in robotics competitions since 2017. I am currently part of Cyberherd, a cybersecurity competition team based at USF. I am also secretary at Whitehatter Computer Security Club.", ], function(c, b) {
+            $.each(["I am Fagan Afandiyev, a dedicated student enrolled at the esteemed University of South Florida, where I pursue my academic journey as a freshman. My fervent interest lies in the intricate domain of cybersecurity, particularly in red-teaming, programming, and robotics. With a steadfast commitment spanning over seven to eight years, I have diligently honed my skills in cybersecurity and programming, alongside actively participating in robotics competitions since 2017.\n\nCurrently, I proudly contribute to Cyberherd, a distinguished cybersecurity competition team rooted within the USF community, where I am continually challenged to push the boundaries of my knowledge and expertise. Additionally, serving as the Secretary at Whitehatter Computer Security Club, I further engage in fostering an environment of learning and collaboration within the cybersecurity realm.", ], function(c, b) {
                 a.print($("<p>").html(b))
             })
         }
@@ -875,7 +875,7 @@ Filesystem = {
         type: "file",
         read: function(a) {
             a.print(xkcd.face);
-            a.print(randomChoice(["Fagan{You_Are_Creative}"]))
+            a.print(randomChoice(["Fagan{th1s_1s_4_s3cr3t_f1ag}"]))
         }
     },
     ".root.txt": {
@@ -886,9 +886,11 @@ Filesystem = {
         }
     }
 };
+ // TODO: Change and add links
 Filesystem.resume = linkFile("/resume.pdf");
 Filesystem.linkedin = linkFile("https://www.linkedin.com/in/fagan-afandiyev-a38698249/")
 Filesystem.github= linkFile("https://github.com/FaganAfandiyev")
+Filesystem.writeups= linkFile("writeups.fegan.me")
 
 TerminalShell.pwd = Filesystem;
 TerminalShell.commands.cd = function(a, b) {
@@ -930,34 +932,35 @@ TerminalShell.commands.type = TerminalShell.commands.cat = function(a, b) {
     }
 };
 TerminalShell.commands.rm = function(b, a, c) {
-    if (a && a[0] != "-") {
-        c = a
-    }
-    if (!c) {
-        b.print("rm: missing operand")
-    } else {
-        if (c in this.pwd) {
-            if (this.pwd[c].type == "file") {
-                delete this.pwd[c]
-            } else {
-                if (this.pwd[c].type == "dir") {
-                    if (/r/.test(a)) {
-                        delete this.pwd[c]
-                    } else {
-                        b.print("rm: cannot remove " + c + ": Is a directory")
-                    }
-                }
-            }
-        } else {
-            if (a == "-rf" && c == "/") {
-                if (b.god) {
-                    TerminalShell.commands = {}
-                } else {
-                    b.print("rm: cannot remove /: Permission denied")
-                }
-            }
-        }
-    }
+    window.location.href = 'https://rickroll.it/rickroll.mp4'
+    // if (a && a[0] != "-") {
+    //     c = a
+    // }
+    // if (!c) {
+    //     b.print("rm: missing operand")
+    // } else {
+    //     if (c in this.pwd) {
+    //         if (this.pwd[c].type == "file") {
+    //             delete this.pwd[c]
+    //         } else {
+    //             if (this.pwd[c].type == "dir") {
+    //                 if (/r/.test(a)) {
+    //                     delete this.pwd[c]
+    //                 } else {
+    //                     b.print("rm: cannot remove " + c + ": Is a directory")
+    //                 }
+    //             }
+    //         }
+    //     } else {
+    //         if (a == "-rf" || c == "/") {
+    //             if (b.god) {
+    //                 TerminalShell.commands = {}
+    //             } else {
+    //                 b.print("rm: cannot remove /: Permission denied")
+    //             }
+    //         }
+    //     }
+    // }
 };
 TerminalShell.commands.hint = TerminalShell.commands.cheat = function(a) {
     a.print(cow("Do you know konami, konami, konami and konami?"))
