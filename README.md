@@ -1,6 +1,6 @@
 # Portfolio CLI
 
-Welcome to the Portfolio Command-Line Interface (CLI)!
+Welcome to the Portfolio Command-Line Interface (CLI)! The website is hosted at https://fegan.me
 
 ## Overview
 
